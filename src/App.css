@@ -47,3 +47,54 @@ li, a, button{
   color: white;
   text-decoration: none;
 }
+#title{
+  color:white;
+  display:flex;
+  justify-content: center;
+  font-size: 100px;
+  font-weight: 700;
+  padding: 100px 5px;
+}
+#products{
+
+}
+.product-card{
+  display:flex;
+  background-color:#22d3ee;
+  height: 350px;
+  width: 300px;
+  border: none;
+  border-radius: 40px;
+  flex-direction: column;
+}
+.fancy > .letter{
+  display: inline-block;
+  transition: ease 350ms;
+}
+.fancy:hover > .letter{
+  transition-duration: 800ms;
+}
+.fancy:hover > .letter:nth-child(1){
+  transform: translate(-80%,60%) rotate(8deg);
+}
+.fancy:hover > .letter:nth-child(3){
+  transform: translate(-40%,20%) rotate(4deg);
+}
+.fancy:hover > .letter:nth-child(5){
+  transform: translate(-10%,60%) rotate(-6deg);
+}
+.fancy:hover > .letter:nth-child(7){
+  transform: translate(20%,30%) rotate(-12deg);
+}
+.fancy:hover > .letter:nth-child(9){
+  transform: translate(40%,-10%) rotate(7deg);
+}
+.fancy:hover > .letter:nth-child(11){
+  transform: translate(50%,-40%) rotate(12deg);
+}
+.fancy:hover > .letter:nth-child(13){
+  transform: translate(70%,-60%) rotate(-5deg);
+}
+.fancy:hover > .letter:nth-child(15){
+  transform: translate(140%,-40%) rotate(13deg);
+}
