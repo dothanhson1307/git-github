@@ -8,21 +8,18 @@ import first from './images/first.png';
 import second from './images/sec.png';
 import third from './images/thir.png';
 function App() {
+  const products = [
+    {name:'tigerr',sold:170,rate:-25},
+    {name:'ccaarr',sold:250,rate:50},
+    {name:'sphere',sold:120,rate:70},
+    {name:'window',sold:270,rate:-50},
+    {name:'tablet',sold:5,rate:200},
+    {name:'seizure',sold:130,rate:30},
+  ];
+  const [firstplc,setFirstplc] = useState('');
+  const [secondplc,setSecondplc] = useState('');
+  const [thirdplc,setThirdplc] = useState('');
   useEffect(()=>{
-    function makeTextCool(id){
-        var element = document.getElementById(id);
-        if(element){
-          var text = element.innerText.split("");
-          element.innerText = "";
-          text.forEach((letter) => {
-            var span = document.createElement('span');
-            span.innerText = letter;
-            span.classList.add('letter');
-            element.appendChild(span);
-          })
-        }
-      }
-    makeTextCool('title');
     function findbest(products){
       var highest = 0;
       var name = '';
@@ -33,6 +30,7 @@ function App() {
         }
       }
       setFirstplc(name);
+      console.log('first',name);
       for(let i=0;i<products.length;i++){
         if(products[i].name == name){
           products.splice(i,1)
@@ -63,18 +61,42 @@ function App() {
 
     }
     findbest(products);
-  },[])
-  const products = [
-    {name:'tigerr',sold:170,rate:-25},
-    {name:'ccaarr',sold:250,rate:50},
-    {name:'sphere',sold:120,rate:70},
-    {name:'window',sold:270,rate:-50},
-    {name:'tablet',sold:5,rate:200},
-    {name:'seizure',sold:130,rate:30},
-  ];
-  const [firstplc,setFirstplc] = useState('');
-  const [secondplc,setSecondplc] = useState('');
-  const [thirdplc,setThirdplc] = useState('');
+
+  })
+   
+  function displayProductList(products){
+    return products.map((product)=>{
+      return(
+        <ul className='product'>
+          <li>{product.name}</li>
+          <li>{product.sold}</li>
+          <li className='rate'>{product.rate}</li>
+        </ul>
+      )
+    })
+  }
+  function decideColor(rate){
+    if(rate > 0){
+      document.querySelector('.rate').style.color = 'green';
+    }
+    else{
+      document.querySelector('.rate').style.color = 'red';
+    }
+  }
+  function makeTextCool(id){
+    var element = document.getElementById(id);
+    if(element){
+      var text = element.innerText.split("");
+      element.innerText = "";
+      text.forEach((letter) => {
+        var span = document.createElement('span');
+        span.innerText = letter;
+        span.classList.add('letter');
+        element.appendChild(span);
+      })
+    }
+  }
+  useEffect(()=>{makeTextCool('title');})
   return (
     <div className="App">
       <div id='navbar-ctn'>
@@ -144,7 +166,12 @@ function App() {
         </div>
       </div>
       <div id='products-list'>
-
+        <ul id='cate' className='product'>
+          <li>NAME</li>
+          <li>SOLD</li>
+          <li>RATE</li>
+        </ul>
+        {displayProductList(products)}
       </div>
     </div>
   );

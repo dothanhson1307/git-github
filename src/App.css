@@ -67,25 +67,25 @@ li, a, button{
 .fancy:hover > .letter:nth-child(1){
   transform: translate(-80%,60%) rotate(8deg);
 }
-.fancy:hover > .letter:nth-child(3){
+.fancy:hover > .letter:nth-child(9){
   transform: translate(-40%,20%) rotate(4deg);
 }
-.fancy:hover > .letter:nth-child(5){
+.fancy:hover > .letter:nth-child(17){
   transform: translate(-10%,60%) rotate(-6deg);
 }
-.fancy:hover > .letter:nth-child(7){
+.fancy:hover > .letter:nth-child(25){
   transform: translate(20%,30%) rotate(-12deg);
 }
-.fancy:hover > .letter:nth-child(9){
+.fancy:hover > .letter:nth-child(33){
   transform: translate(40%,-10%) rotate(7deg);
 }
-.fancy:hover > .letter:nth-child(11){
+.fancy:hover > .letter:nth-child(41){
   transform: translate(50%,-40%) rotate(12deg);
 }
-.fancy:hover > .letter:nth-child(13){
+.fancy:hover > .letter:nth-child(49){
   transform: translate(70%,-60%) rotate(-5deg);
 }
-.fancy:hover > .letter:nth-child(15){
+.fancy:hover > .letter:nth-child(57){
   transform: translate(140%,-40%) rotate(13deg);
 }
 #products{
@@ -188,5 +188,30 @@ li, a, button{
 .number-s{
   background-color:#3f3f46;
   padding: 0 20px;
+  color:#06b6d4;
+}
+#products-list{
+  display:flex;
+  flex-direction: column;
+  background-color:#272727;
+  margin: 0 30px;
+  border-radius: 30px;
+}
+.product{
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+}
+.product li{
+  padding: 3px 100px;
+  margin: 0 20px;
+  width: 100px;
+}
+#cate{
+  border-bottom:#0e7490 solid 5px;
+}
+#cate li{
+  font-size: 40px;
+  font-weight: 1000;
   color:#06b6d4;
 }
